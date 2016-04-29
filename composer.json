@@ -1,0 +1,19 @@
+{
+	"name": "ethercreative/yii2-ip-ratelimiter",
+	"description": "Allow guest clients to be rate limited, using their IP as the identifier.",
+	"type": "yii2-module",
+	"keywords": ["yii2", "ratelimiter"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Matt Edmonston",
+			"email": "matt@ethercreative.co.uk"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"ethercreative\\ratelimiter\\": ""
+		}
+	}
+}
