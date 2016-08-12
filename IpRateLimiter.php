@@ -5,11 +5,11 @@ namespace ethercreative\ratelimiter;
 use Yii;
 
 /**
- * Class RateLimiter
+ * Class IpRateLimiter
  *
  * @package ethercreative\ratelimiter
  */
-class RateLimiter extends \yii\filters\RateLimiter
+class IpRateLimiter extends \yii\filters\RateLimiter
 {
     /**
      * @var boolean whether to separate rate limiting between non and authenticated users
