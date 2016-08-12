@@ -8,7 +8,11 @@
 		{
 			"name": "Matt Edmonston",
 			"email": "matt@ethercreative.co.uk"
-		}
+		},
+        {
+          "name": "Yaroslav Lukyanov",
+          "email": "c_sharp@mail.ru"
+        }
 	],
 	"require": {},
 	"autoload": {
