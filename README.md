@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require ethercretaive/yii2-api-ratelimiter "~2.0.0"
+php composer.phar require ethercreative/yii2-api-ratelimiter "~2.0.0"
 ```
 
 or add
