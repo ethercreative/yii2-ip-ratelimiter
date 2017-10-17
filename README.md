@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require ethercreative/yii2-ip-ratelimiter "~2.0.0"
+php composer.phar require ethercreative/yii2-ip-ratelimiter "1.*"
 ```
 
 or add
 
 ```
-"ethercreative/yii2-ip-ratelimiter": "~2.0.0"
+"ethercreative/yii2-ip-ratelimiter": "1.*"
 ```
 
 to the require section of your `composer.json` file.
