@@ -1,14 +1,9 @@
 <?php
 
-namespace ethercreative\ratelimiter;
+namespace andreyv\ratelimiter;
 
 use yii\filters\RateLimitInterface;
 
-/**
- * Interface IpRateLimitInterface
- *
- * @package ethercreative\ratelimiter
- */
 interface IpRateLimitInterface extends RateLimitInterface
 {
     /**

@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require ethercreative/yii2-ip-ratelimiter "1.*"
+php composer.phar require andreyv/yii2-ip-ratelimiter "1.*"
 ```
 
 or add
 
 ```
-"ethercreative/yii2-ip-ratelimiter": "1.*"
+"andreyv/yii2-ip-ratelimiter": "1.*"
 ```
 
 to the require section of your `composer.json` file.
@@ -31,7 +31,7 @@ public function behaviors()
 	$behaviors = parent::behaviors();
 	$behaviors['rateLimiter'] = [
 		// Use class
-		'class' => \ethercreative\ratelimiter\RateLimiter::className(),
+		'class' => \andreyv\ratelimiter\RateLimiter::class,
 
 		// The maximum number of allowed requests
 		'rateLimit' => 100,
@@ -43,7 +43,7 @@ public function behaviors()
 		// Defaults to true
 		// - false: use one set of rates, whether you are authenticated or not
 		// - true: use separate ratesfor guests and authenticated users
-		'separateRates' => false,
+		'separateRates' => true,
 
 		// Whether to return HTTP headers containing the current rate limiting information
 		'enableRateLimitHeaders' => false,
@@ -51,3 +51,5 @@ public function behaviors()
 	return $behaviors;
 }
 ```
+
+Forked from ethercreative/yii2-ip-ratelimiter.

@@ -1,15 +1,10 @@
 <?php
 
-namespace ethercreative\ratelimiter;
+namespace andreyv\ratelimiter;
 
 use Yii;
 
-/**
- * Class UserExample
- *
- * @package ethercreative\ratelimiter
- */
-class UserExample extends \yii\base\Model implements IpRateLimitInterface
+class UserIdentity implements IpRateLimitInterface
 {
     /**
      * @var string IP of the user
