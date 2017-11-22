@@ -28,10 +28,19 @@ class IpRateLimiter extends RateLimiter
     public $actions = [];
 
     /**
+     * @var bool allows to skip rate limiting for test environment
+     */
+    public $testMode = false;
+
+    /**
      * @inheritdoc
      */
     public function beforeAction($action)
     {
+        if ($this->testMode) {
+            return true;
+        }
+
         if (is_array($this->actions) && (empty($this->actions) || in_array($action->id, $this->actions))) {
             if ($this->separateRates && !$this->user) {
                 $this->user = Yii::$app->getUser() ? Yii::$app->getUser()->getIdentity(false) : null;

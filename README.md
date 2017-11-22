@@ -31,7 +31,7 @@ public function behaviors()
     $behaviors = parent::behaviors();
     $behaviors['rateLimiter'] = [
         // Use class
-        'class' => \andreyv\ratelimiter\RateLimiter::class,
+        'class' => \andreyv\ratelimiter\IpRateLimiter::class,
 
         // The maximum number of allowed requests
         'rateLimit' => 100,
@@ -50,6 +50,9 @@ public function behaviors()
 
         // Array of actions on which to apply ratelimiter, if empty - applies to all actions
         'actions' => ['index'],
+
+        // Allows to skip rate limiting for test environment
+        'testMode' => true,
     ];
     return $behaviors;
 }
