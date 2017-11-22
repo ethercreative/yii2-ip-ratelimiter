@@ -44,7 +44,7 @@ class IpRateLimiter extends RateLimiter
                     $identityClass = UserIdentity::class;
                 }
 
-                $this->user = $identityClass::findByIp(
+                $this->user = $identityClass::create(
                     $this->request->getUserIP(),
                     $this->rateLimit,
                     $this->timePeriod

@@ -15,5 +15,5 @@ interface IpRateLimitInterface extends RateLimitInterface
      *
      * @return static
      */
-    public static function findByIp($ip, $rateLimit, $timePeriod);
+    public static function create($ip, $rateLimit, $timePeriod);
 }

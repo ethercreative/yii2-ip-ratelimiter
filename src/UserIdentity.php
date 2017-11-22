@@ -24,7 +24,7 @@ class UserIdentity implements IpRateLimitInterface
     /**
      * @inheritdoc
      */
-    public static function findByIp($ip, $rateLimit, $timePeriod)
+    public static function create($ip, $rateLimit, $timePeriod)
     {
         $user = new static();
 
