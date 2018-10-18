@@ -33,6 +33,11 @@ class IpRateLimiter extends RateLimiter
     public $testMode = false;
 
     /**
+     * @var string tag in headers containing IP list
+     */
+    public $ipHeader = 'X-Forwarded-For';
+
+    /**
      * @inheritdoc
      */
     public function beforeAction($action)
@@ -64,15 +69,16 @@ class IpRateLimiter extends RateLimiter
         }
         return true;
     }
-}
-/*
-When used trusted proxy, we need use limit by combination ip proxy server and X-Forwarded-For header.
-*/
-protected function prepareIpListString()
-{
-    $ipList = [$this->request->getRemoteIP()];
-    if ($this->request->headers->has('X-Forwarded-For')) {
-        $ipList[] = $this->request->headers->get('X-Forwarded-For');
+
+    /*
+    When used trusted proxy, we need use limit by combination ip proxy server and X-Forwarded-For header.
+    */
+    protected function prepareIpListString()
+    {
+        $ipList = [$this->request->getRemoteIP()];
+        if ($this->request->headers->has($this->ipHeader)) {
+            $ipList[] = $this->request->headers->get($this->ipHeader);
+        }
+        return implode(', ', $ipList);
     }
-    return implode(', ', $ipList);
 }
