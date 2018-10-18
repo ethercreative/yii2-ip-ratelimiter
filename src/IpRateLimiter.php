@@ -40,7 +40,7 @@ class IpRateLimiter extends RateLimiter
     /**
      * @var string tag in headers containing IP list
      */
-    public $ipHeader = 'X-Forwarded-For';
+    public $proxyIpHeader = 'X-Forwarded-For';
 
     /**
      * @inheritdoc
@@ -81,8 +81,8 @@ class IpRateLimiter extends RateLimiter
     protected function prepareIpListString()
     {
         $ipList = [$this->request->getRemoteIP()];
-        if ($this->proxyEnabled && $this->request->headers->has($this->ipHeader)) {
-            $ipList[] = $this->request->headers->get($this->ipHeader);
+        if ($this->proxyEnabled && $this->request->headers->has($this->proxyIpHeader)) {
+            $ipList[] = $this->request->headers->get($this->proxyIpHeader);
         }
         return implode(', ', $ipList);
     }
