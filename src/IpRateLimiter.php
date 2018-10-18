@@ -84,7 +84,6 @@ class IpRateLimiter extends RateLimiter
         if ($this->proxyEnabled && $this->request->headers->has($this->ipHeader)) {
             $ipList[] = $this->request->headers->get($this->ipHeader);
         }
-        var_dump($ipList);
         return implode(', ', $ipList);
     }
 }
