@@ -33,6 +33,11 @@ class IpRateLimiter extends RateLimiter
     public $testMode = false;
 
     /**
+     * @var bool defines whether proxy enabled
+     */
+    public $proxyEnabled = false;
+
+    /**
      * @var string tag in headers containing IP list
      */
     public $ipHeader = 'X-Forwarded-For';
@@ -76,9 +81,10 @@ class IpRateLimiter extends RateLimiter
     protected function prepareIpListString()
     {
         $ipList = [$this->request->getRemoteIP()];
-        if ($this->request->headers->has($this->ipHeader)) {
+        if ($this->proxyEnabled && $this->request->headers->has($this->ipHeader)) {
             $ipList[] = $this->request->headers->get($this->ipHeader);
         }
+        var_dump($ipList);
         return implode(', ', $ipList);
     }
 }
