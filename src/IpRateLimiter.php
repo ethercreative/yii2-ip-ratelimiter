@@ -59,7 +59,7 @@ class IpRateLimiter extends RateLimiter
                 }
 
                 $this->user = $identityClass::create(
-                    $this->prepareIpListString(),
+                    $this->request->getUserIP(),
                     $this->rateLimit,
                     $this->timePeriod
                 );
@@ -68,17 +68,5 @@ class IpRateLimiter extends RateLimiter
             return parent::beforeAction($action);
         }
         return true;
-    }
-
-    /*
-    When used trusted proxy, we need use limit by combination ip proxy server and X-Forwarded-For header.
-    */
-    protected function prepareIpListString()
-    {
-        $ipList = [$this->request->getRemoteIP()];
-        if ($this->proxyEnabled) {
-            $ipList[] = $this->request->getUserIP();
-        }
-        return implode(', ', $ipList);
     }
 }
