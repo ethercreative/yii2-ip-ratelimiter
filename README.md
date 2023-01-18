@@ -53,6 +53,8 @@ public function behaviors()
 
         // Allows to skip rate limiting for test environment
         'testMode' => true,
+        // Defines whether proxy enabled, list of headers getting from request ipHeaders. By default ['X-Forwarded-For']
+        'proxyEnabled' => false
     ];
     return $behaviors;
 }
