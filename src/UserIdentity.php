@@ -1,15 +1,10 @@
 <?php
 
-namespace ethercreative\ratelimiter;
+namespace andreyv\ratelimiter;
 
 use Yii;
 
-/**
- * Class UserExample
- *
- * @package ethercreative\ratelimiter
- */
-class UserExample extends \yii\base\Model implements IpRateLimitInterface
+class UserIdentity implements IpRateLimitInterface
 {
     /**
      * @var string IP of the user
@@ -29,7 +24,7 @@ class UserExample extends \yii\base\Model implements IpRateLimitInterface
     /**
      * @inheritdoc
      */
-    public static function findByIp($ip, $rateLimit, $timePeriod)
+    public static function create($ip, $rateLimit, $timePeriod)
     {
         $user = new static();
 

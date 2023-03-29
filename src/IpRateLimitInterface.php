@@ -1,14 +1,9 @@
 <?php
 
-namespace ethercreative\ratelimiter;
+namespace andreyv\ratelimiter;
 
 use yii\filters\RateLimitInterface;
 
-/**
- * Interface IpRateLimitInterface
- *
- * @package ethercreative\ratelimiter
- */
 interface IpRateLimitInterface extends RateLimitInterface
 {
     /**
@@ -20,5 +15,5 @@ interface IpRateLimitInterface extends RateLimitInterface
      *
      * @return static
      */
-    public static function findByIp($ip, $rateLimit, $timePeriod);
+    public static function create($ip, $rateLimit, $timePeriod);
 }

@@ -1,23 +1,29 @@
 {
-	"name": "ethercreative/yii2-ip-ratelimiter",
-	"description": "Allow guest clients to be rate limited, using their IP as the identifier.",
-	"type": "yii2-module",
-	"keywords": ["yii2", "ratelimiter"],
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Matt Edmonston",
-			"email": "matt@ethercreative.co.uk"
-		},
+    "name": "andreyv/yii2-ip-ratelimiter",
+    "description": "Allow guest clients to be rate limited, using their IP as the identifier.",
+    "type": "yii2-module",
+    "keywords": ["yii2", "ratelimiter"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Edmonston",
+            "email": "matt@ethercreative.co.uk"
+        },
         {
           "name": "Yaroslav Lukyanov",
           "email": "c_sharp@mail.ru"
+        },
+        {
+          "name": "Andreyv V",
+          "email": "skifbrt@gmail.com"
         }
-	],
-	"require": {},
-	"autoload": {
-		"psr-4": {
-			"ethercreative\\ratelimiter\\": ""
-		}
-	}
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "andreyv\\ratelimiter\\": "src"
+        }
+    }
 }
